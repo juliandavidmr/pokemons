@@ -1,5 +1,9 @@
+import './polyfills'
 import { createApp } from 'vue'
 import App from './App.vue'
 import './styles.css'
+import { store } from "./store/pokemon";
 
-createApp(App).mount('#app')
+createApp(App)
+	.use(store)
+	.mount('#app')

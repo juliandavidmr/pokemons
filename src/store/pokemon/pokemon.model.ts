@@ -1,11 +1,11 @@
 export interface PokemonState {
 	pokemonList: Pokemon[];
 	count: number;
+	loading: boolean;
 }
 
 export interface Pokemon {
-	loggedIn: boolean,
-	loginError?: string,
-	userName?: string,
-	expiration?: number,
+	name: string
+	link: string
+	stared: boolean;
 }

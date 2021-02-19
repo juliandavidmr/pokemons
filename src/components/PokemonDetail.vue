@@ -26,7 +26,7 @@
           </div>
         </div>
         <div class="bg-gray-50 py-3 sm:px-3 flex justify-between">
-          <button type="button"
+          <button @click="shareData()" type="button"
                   class="w-52 mx-auto inline-flex justify-center rounded-3xl border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
             Share to my friends
           </button>
@@ -63,6 +63,10 @@ export default {
             console.log('info', info)
             this.info = info;
           })
+    },
+    shareData() {
+      const ob = [this.details.name, this.info.weight, this.info.height, this.info.types.map(t => t.type.name).join(', ')];
+      window.prompt("Copy to clipboard: Ctrl+C, Enter", ob.join(','));
     }
   }
 }
